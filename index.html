@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Fire Reporting System</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="my-4">
+            <h1 class="text-center">Online Fire Reporting System</h1>
+        </header>
+
+        <!-- Fire Incident Reporting Form -->
+        <section class="mb-4">
+            <h2>Report a Fire Incident</h2>
+            <form id="reportForm">
+                <div class="form-group">
+                    <label for="incidentLocation">Incident Location:</label>
+                    <input type="text" class="form-control" id="incidentLocation" required>
+                </div>
+                <div class="form-group">
+                    <label for="incidentDescription">Description:</label>
+                    <textarea class="form-control" id="incidentDescription" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Report</button>
+            </form>
+            <div id="reportStatus" class="mt-3"></div>
+        </section>
+
+        <!-- Fire Fighter Teams Management -->
+        <section>
+            <h2>Fire Fighter Teams</h2>
+            <ul id="teamList" class="list-group"></ul>
+            <button class="btn btn-success mt-3" data-toggle="modal" data-target="#addTeamModal">Add Team</button>
+        </section>
+    </div>
+
+    <!-- Add Team Modal -->
+    <div class="modal fade" id="addTeamModal" tabindex="-1" role="dialog" aria-labelledby="addTeamModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addTeamModalLabel">Add Fire Fighter Team</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addTeamForm">
+                        <div class="form-group">
+                            <label for="teamName">Team Name:</label>
+                            <input type="text" class="form-control" id="teamName" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Team</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
